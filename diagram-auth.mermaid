@@ -1,0 +1,43 @@
+graph TD
+
+%% Webapps enter via API Gateway
+    webapp-client --> api-gateway
+    admin-portal --> api-gateway
+%% Gateway routes only to entry-point services
+    api-gateway --> auth-service
+    api-gateway --> user-service
+    api-gateway --> project-service
+    api-gateway --> task-service
+    api-gateway --> comment-service
+    api-gateway --> file-service
+    api-gateway --> billing-service
+    api-gateway --> feature-flag-service
+    api-gateway --> notification-service
+    api-gateway --> search-service
+    api-gateway --> audit-log-service
+%% Core service dependencies
+    task-service --> project-service
+    task-service --> user-service
+    task-service --> auth-service
+    comment-service --> task-service
+    comment-service --> user-service
+    comment-service --> auth-service
+    file-service --> auth-service
+    project-service --> user-service
+    project-service --> auth-service
+    user-service --> auth-service
+%% Supporting services (1-way dependencies)
+    task-service --> notification-service
+    task-service --> search-service
+    comment-service --> notification-service
+    comment-service --> search-service
+    project-service --> search-service
+    project-service --> notification-service
+    linkStyle 2 stroke: red
+    linkStyle 15 stroke: red
+    linkStyle 18 stroke: red
+    linkStyle 19 stroke: red
+    linkStyle 21 stroke: red
+    linkStyle 22 stroke: red
+    classDef authNode stroke: #ff0000, stroke-width: 2px;
+    class auth-service authNode;
