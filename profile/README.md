@@ -4,8 +4,6 @@
 
 ## 🧠 Core Services
 
-- auth-service (backend – TypeScript, Node.js, tRPC, Postgres)
-  Handles user authentication, session management (JWT/cookies), and OAuth integrations.
 - user-service (backend – TypeScript, Node.js, tRPC, Postgres)
   Manages user profiles, account settings, organizations, and team memberships.
 - project-service (backend – TypeScript, Node.js, tRPC, Postgres)
@@ -31,6 +29,10 @@
   Manages subscriptions, invoices, and usage metering across user accounts.
 - feature-flag-service (backend – TypeScript, Node.js, Postgres)
   Controls feature rollouts per user, org, or environment for experiments and testing.
+- permission-service (backend – TypeScript, Node.js, tRPC, Postgres)
+  Handles user access to resources based on different parameters.
+- auth-service (backend – TypeScript, Node.js, tRPC, Postgres)
+  Handles user authentication, session management (JWT/cookies), and OAuth integrations.
 
 ## 🌐 Frontends
 

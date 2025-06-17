@@ -5,6 +5,7 @@ ORG="morph-playground"
 
 repos=(
   "auth-service|Handles user authentication, session management (JWT/cookies), and OAuth integrations.|backend – TypeScript, Node.js, tRPC, Postgres"
+  "permission-service|Handles user permissions.|backend – TypeScript, Node.js, tRPC, Postgres"
   "user-service|Manages user profiles, account settings, organizations, and team memberships.|backend – TypeScript, Node.js, tRPC, Postgres"
   "project-service|Central domain service managing projects, metadata, project states, and access control.|backend – TypeScript, Node.js, tRPC, Postgres"
   "task-service|Handles task creation, assignments, status updates, due dates, labels, etc.|backend – TypeScript, Node.js, tRPC, Postgres"

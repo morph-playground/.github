@@ -15,29 +15,29 @@ graph TD
     api-gateway --> notification-service
     api-gateway --> search-service
     api-gateway --> audit-log-service
-%% Core service dependencies
+
     task-service --> project-service
     task-service --> user-service
-    task-service --> auth-service
+    task-service --> permission-service
     comment-service --> task-service
     comment-service --> user-service
-    comment-service --> auth-service
-    file-service --> auth-service
+    comment-service --> permission-service
     project-service --> user-service
-    project-service --> auth-service
-    user-service --> auth-service
-%% Supporting services (1-way dependencies)
+    project-service --> permission-service
+    user-service --> permission-service
     task-service --> notification-service
     task-service --> search-service
     comment-service --> notification-service
     comment-service --> search-service
     project-service --> search-service
     project-service --> notification-service
-    linkStyle 2 stroke: red
+    notification-service --> permission-service
+
     linkStyle 15 stroke: red
     linkStyle 18 stroke: red
-    linkStyle 19 stroke: red
+    linkStyle 20 stroke: red
     linkStyle 21 stroke: red
-    linkStyle 22 stroke: red
-    classDef authNode stroke: #ff0000, stroke-width: 2px;
-    class auth-service authNode;
+    linkStyle 28 stroke: red
+
+    classDef highlightedNode stroke: #ff0000, stroke-width: 2px;
+    class permission-service highlightedNode;
