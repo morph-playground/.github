@@ -1,6 +1,39 @@
-# .github
+## Playground
+
+This organization is a made up codebase for testing software migrations.
+It is a simple SaaS for task management built using microservice architecture.
+
+Main user cases are around task management. 
+Users can create projects, tasks, comment on tasks, receive notifications and many other features.
+
 
 [Architecture diagram](../diagram.mermaid)
+
+
+## Migration tasks
+
+### Clean up console.log (easy)
+
+### Permission service evolution (easy)
+
+[Permission service dependencies](../diagram-permission.mermaid)
+
+### Permission service evolution (hard)
+
+The company is moving to multi-tenant setup. This means we need to re-work how we evaluate permissions.
+Infra team has already implemented authentication and they add new `identity-tenant-id` header in the api-gateway.
+
+The owners of `permission-service` have already implemented a new endpoint `/v2/check` 
+that can accept `tenantId` along with existing `subjectId`.
+
+So now all the other components need to be updated to the new version of permission-service.
+But all the feature teams are busy with building a new shiny AI integration and can not prioritize this upgrade.
+
+The only hope is you.
+
+Bonus points - permission service is a messy copy-paste code so it reuses the same 
+
+[Permission service dependencies](../diagram-permission.mermaid)
 
 ## 🧠 Core Services
 
