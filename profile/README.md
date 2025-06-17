@@ -1,5 +1,7 @@
 # .github
 
+[Architecture diagram](../diagram.mermaid)
+
 ## 🧠 Core Services
 
 - auth-service (backend – TypeScript, Node.js, tRPC, Postgres)
